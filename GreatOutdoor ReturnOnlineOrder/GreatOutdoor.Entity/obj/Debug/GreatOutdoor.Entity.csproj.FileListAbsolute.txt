@@ -16,3 +16,12 @@ C:\Users\Utkarsh\Documents\GitHub\Final\Sunday\GreatOutdoor ReturnOnlineOrder\Gr
 C:\Users\Utkarsh\Documents\GitHub\Final\Sunday\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.csproj.CopyComplete
 C:\Users\Utkarsh\Documents\GitHub\Final\Sunday\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.dll
 C:\Users\Utkarsh\Documents\GitHub\Final\Sunday\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.pdb
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\bin\Debug\GreatOutdoor.Entity.dll
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\bin\Debug\GreatOutdoor.Entity.pdb
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\bin\Debug\GreatOutdoor.Exception.dll
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\bin\Debug\GreatOutdoor.Exception.pdb
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.csprojAssemblyReference.cache
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.csproj.CoreCompileInputs.cache
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.csproj.CopyComplete
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.dll
+C:\Users\Utkarsh\Documents\GitHub\Final\Sunday2\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Entity\obj\Debug\GreatOutdoor.Entity.pdb

@@ -26,7 +26,7 @@ namespace GreatOutdoor.Entities
         
         private string _purposeOfReturn;
         private int _noOfReturn;
-        private int _returnID;
+        private static int _returnID=0;
         private int _productID;
         private int _orderID;
         private double _returnAmount;
@@ -45,7 +45,7 @@ namespace GreatOutdoor.Entities
         {
             _purposeOfReturn = string.Empty;
             _noOfReturn = 0;
-            _returnID = 0;
+            _returnID++;
             _productID = 0;
             _returnAmount = 0.0;
             _orderID = 0;
