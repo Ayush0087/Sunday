@@ -1,0 +1,6 @@
+C:\Users\Utkarsh\Documents\GitHub\Final\PersonalProjectWork\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Exception\bin\Debug\GreatOutdoor.Exception.dll
+C:\Users\Utkarsh\Documents\GitHub\Final\PersonalProjectWork\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Exception\bin\Debug\GreatOutdoor.Exception.pdb
+C:\Users\Utkarsh\Documents\GitHub\Final\PersonalProjectWork\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Exception\obj\Debug\GreatOutdoor.Exception.csprojAssemblyReference.cache
+C:\Users\Utkarsh\Documents\GitHub\Final\PersonalProjectWork\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Exception\obj\Debug\GreatOutdoor.Exception.csproj.CoreCompileInputs.cache
+C:\Users\Utkarsh\Documents\GitHub\Final\PersonalProjectWork\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Exception\obj\Debug\GreatOutdoor.Exception.dll
+C:\Users\Utkarsh\Documents\GitHub\Final\PersonalProjectWork\GreatOutdoor ReturnOnlineOrder\GreatOutdoor.Exception\obj\Debug\GreatOutdoor.Exception.pdb
