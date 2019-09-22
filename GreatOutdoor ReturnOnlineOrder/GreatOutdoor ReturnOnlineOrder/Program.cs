@@ -81,7 +81,7 @@ namespace GreatOutdoor.PresentationLayer
                 Console.WriteLine("Enter ReturnID to Update Details:");
                 updateOnlineReturnID = Convert.ToInt32(Console.ReadLine());
                 OnlineReturnBL onlineReturnBL = new OnlineReturnBL();
-               OnlineReturn updateonlineReturn = onlineReturnBL.searchOnlineReturnBL(updateOnlineReturnID);
+               OnlineReturn updateonlineReturn = onlineReturnBL.UpdateOnlineReturnBL(updateOnlineReturnID);
                 if (updateonlineReturn != null)
                 {
                     Console.WriteLine("Update Purpose Of Return :");
@@ -189,7 +189,7 @@ namespace GreatOutdoor.PresentationLayer
                 Console.WriteLine("Enter Return ID to search");
                 searchReturnID = Convert.ToInt32(Console.ReadLine());
                 OnlineReturnBL onlineReturnBL = new OnlineReturnBL();
-                OnlineReturn searchOnlineReturn = onlineReturnBL.searchOnlineReturnBL(searchReturnID);
+                OnlineReturn searchOnlineReturn = onlineReturnBL.GetOnlineReturnsBL(searchReturnID);
                 if(searchOnlineReturn!= null)
                 {
                    

@@ -101,6 +101,11 @@ namespace GreatOutdoor.BusinessLayer
             return onlineReturnAdded;
        }
 
+        public OnlineReturn UpdateOnlineReturnBL(int updateOnlineReturnID)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<OnlineReturn> GetOnlineReturnsBL()
         {
             List<OnlineReturn> onlineReturnList = null;
@@ -213,8 +218,10 @@ namespace GreatOutdoor.BusinessLayer
             }
         }
 
-
-
+        public OnlineReturn GetOnlineReturnsBL(int searchReturnID)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     
