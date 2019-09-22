@@ -1,0 +1,6 @@
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Exceptions\bin\Debug\SalesPerson.Exceptions.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Exceptions\bin\Debug\SalesPerson.Exceptions.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Exceptions\obj\Debug\SalesPerson.Exceptions.csprojAssemblyReference.cache
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Exceptions\obj\Debug\SalesPerson.Exceptions.csproj.CoreCompileInputs.cache
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Exceptions\obj\Debug\SalesPerson.Exceptions.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Exceptions\obj\Debug\SalesPerson.Exceptions.pdb
