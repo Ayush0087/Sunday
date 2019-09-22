@@ -1,0 +1,9 @@
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\bin\Debug\SalesPerson.Entities.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\bin\Debug\SalesPerson.Entities.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\bin\Debug\SalesPerson.Exceptions.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\bin\Debug\SalesPerson.Exceptions.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\obj\Debug\SalesPerson.Entities.csprojAssemblyReference.cache
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\obj\Debug\SalesPerson.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\obj\Debug\SalesPerson.Entities.csproj.CopyComplete
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\obj\Debug\SalesPerson.Entities.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson.Entities\obj\Debug\SalesPerson.Entities.pdb

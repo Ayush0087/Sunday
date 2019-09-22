@@ -1,0 +1,16 @@
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\obj\Debug\SalesPerson.csprojAssemblyReference.cache
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\obj\Debug\SalesPerson.csproj.CoreCompileInputs.cache
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.exe.config
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.exe
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.BussinessLayer.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.DataAccessLayer.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.Entities.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.Exceptions.dll
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.BussinessLayer.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.DataAccessLayer.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.Entities.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\bin\Debug\SalesPerson.Exceptions.pdb
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\obj\Debug\SalesPerson.csproj.CopyComplete
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\obj\Debug\SalesPerson.exe
+C:\Users\Utkarsh\source\repos\SalesPerson\SalesPerson\obj\Debug\SalesPerson.pdb
