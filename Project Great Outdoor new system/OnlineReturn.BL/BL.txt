@@ -1,0 +1,303 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using Capgemini.GreatOutdoor.Contracts.BLContracts;
+using Capgemini.GreatOutdoor.Contracts.DALContracts;
+using Capgemini.GreatOutdoor.DataAccessLayer;
+using Capgemini.GreatOutdoor.Entities;
+using Capgemini.GreatOutdoor.Exceptions;
+using Capgemini.GreatOutdoor.Helpers.ValidationAttributes;
+
+namespace Capgemini.GreatOutdoor.BusinessLayer
+{
+    /// <summary>
+    /// Contains data access layer methods for inserting, updating, deleting onlineReturns from OnlineReturns collection.
+    /// </summary>
+    public class OnlineReturnBL : BLBase<OnlineReturn>, IOnlineReturnBL, IDisposable
+    {
+        //fields
+        OnlineReturnDALBase onlineReturnDAL;
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        public OnlineReturnBL()
+        {
+            this.onlineReturnDAL = new OnlineReturnDAL();
+        }
+
+        /// <summary>
+        /// Validations on data before adding or updating.
+        /// </summary>
+        /// <param name="entityObject">Represents object to be validated.</param>
+        /// <returns>Returns a boolean value, that indicates whether the data is valid or not.</returns>
+        protected async override Task<bool> Validate(OnlineReturn entityObject)
+        {
+            //Create string builder
+            StringBuilder sb = new StringBuilder();
+            bool valid = await base.Validate(entityObject);
+
+            //Email is Unique
+            var existingObject = await GetOnlineReturnByEmailBL(entityObject.Email);
+            if (existingObject != null && existingObject?.OnlineReturnID != entityObject.OnlineReturnID)
+            {
+                valid = false;
+                sb.Append(Environment.NewLine + $"Email {entityObject.Email} already exists");
+            }
+
+            if (valid == false)
+                throw new InventoryException(sb.ToString());
+            return valid;
+        }
+
+        /// <summary>
+        /// Adds new onlineReturn to OnlineReturns collection.
+        /// </summary>
+        /// <param name="newOnlineReturn">Contains the onlineReturn details to be added.</param>
+        /// <returns>Determinates whether the new onlineReturn is added.</returns>
+        public async Task<bool> AddOnlineReturnBL(OnlineReturn newOnlineReturn)
+        {
+            bool onlineReturnAdded = false;
+            try
+            {
+                if (await Validate(newOnlineReturn))
+                {
+                    await Task.Run(() =>
+                    {
+                        this.onlinereturnDAL.AddOnlineReturnDAL(newOnlineReturn);
+                        onlineReturnAdded = true;
+                        Serialize();
+                    });
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return onlineReturnAdded;
+        }
+
+        /// <summary>
+        /// Gets all onlineReturns from the collection.
+        /// </summary>
+        /// <returns>Returns list of all onlineReturns.</returns>
+        public async Task<List<OnlineReturn>> GetAllOnlineReturnsBL()
+        {
+            List<OnlineReturn> onlineReturnsList = null;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    onlineReturnsList = onlineReturnDAL.GetAllOnlineReturnsDAL();
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return onlineReturnsList;
+        }
+
+        /// <summary>
+        /// Gets onlineReturn based on OnlineReturnID.
+        /// </summary>
+        /// <param name="searchOnlineReturnID">Represents OnlineReturnID to search.</param>
+        /// <returns>Returns OnlineReturn object.</returns>
+        public async Task<OnlineReturn> GetOnlineReturnByOnlineReturnIDBL(Guid searchOnlineReturnID)
+        {
+            OnlineReturn matchingOnlineReturn = null;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    matchingOnlineReturn = onlineReturnDAL.GetOnlineReturnByOnlineReturnIDDAL(searchOnlineReturnID);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return matchingOnlineReturn;
+        }
+
+        /// <summary>
+        /// Gets onlinereturn based on PurposeOfReturn.
+        /// </summary>
+        /// <param name="purposeOfReturn">Represents purposeOfReturn to search.</param>
+        /// <returns>Returns OnlineReturn object.</returns>
+        public async Task<List<OnlineReturn>> GetOnlineReturnsByPurposeOfReturnBL(string purposeOfReturn)
+        {
+            List<OnlineReturn> matchingOnlineReturns = new List<OnlineReturn>();
+            try
+            {
+                await Task.Run(() =>
+                {
+                    matchingOnlineReturns = onlineReturnDAL.GetOnlineReturnsByPurposeOfReturnDAL(purposeOfReturn);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return matchingOnlineReturns;
+        }
+
+        /// <summary>
+        /// Gets onlineReturn based on Email and Password.
+        /// </summary>
+        /// <param name="email">Represents OnlineReturn's Email Address.</param>
+        /// <returns>Returns OnlineReturn object.</returns>
+        public async Task<OnlineReturn> GetOnlineReturnByEmailBL(string email)
+        {
+            OnlineReturn matchingOnlineReturn = null;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    matchingOnlineReturn = onlineReturnDAL.GetOnlineReturnByEmailDAL(email);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return matchingOnlineReturn;
+        }
+
+        /// <summary>
+        /// Gets onlineReturn based on Password.
+        /// </summary>
+        /// <param name="email">Represents OnlineReturn's Email Address.</param>
+        /// <param name="password">Represents OnlineReturn's Password.</param>
+        /// <returns>Returns OnlineReturn object.</returns>
+        public async Task<OnlineReturn> GetOnlineReturnByEmailAndPasswordBL(string email, string password)
+        {
+            OnlineReturn matchingOnlineReturn = null;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    matchingOnlineReturn = onlineReturnDAL.GetOnlineReturnByEmailAndPasswordDAL(email, password);
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return matchingOnlineReturn;
+        }
+
+        /// <summary>
+        /// Updates onlineReturn based on OnlineReturnID.
+        /// </summary>
+        /// <param name="updateonlineReturn">Represents OnlineReturn details including OnlineReturnID, PurposeOfReturn etc.</param>
+        /// <returns>Determinates whether the existing onlineReturn is updated.</returns>
+        public async Task<bool> UpdateOnlineReturnBL(OnlineReturn updateOnlinereturn)
+        {
+            bool onlineReturnUpdated = false;
+            try
+            {
+                if ((await Validate(updateOnlineReturn)) && (await GetOnlineReturnByOnlineReturnIDBL(updateOnlineReturn.OnlineReturnID)) != null)
+                {
+                    this.onlineReturnDAL.UpdateOnlineReturnDAL(updateOnlineReturn);
+                    onlineReturnUpdated = true;
+                    Serialize();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return onlineReturnUpdated;
+        }
+
+        /// <summary>
+        /// Deletes onlineReturn based on OnlineReturnID.
+        /// </summary>
+        /// <param name="deleteOnlineReturnID">Represents OnlineReturnID to delete.</param>
+        /// <returns>Determinates whether the existing onlineReturn is updated.</returns>
+        public async Task<bool> DeleteOnlineReturnBL(Guid deleteOnlineReturnID)
+        {
+            bool onlineReturnDeleted = false;
+            try
+            {
+                await Task.Run(() =>
+                {
+                    onlineReturnDeleted = onlineReturnDAL.DeleteOnlineReturnDAL(deleteOnlineReturnID);
+                    Serialize();
+                });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return onlineReturnDeleted;
+        }
+
+        /// <summary>
+        /// Updates onlineReturn's password based on OnlineReturnID.
+        /// </summary>
+        /// <param name="updateOnlineReturn">Represents OnlineReturn details including OnlineReturnID, Password.</param>
+        /// <returns>Determinates whether the existing onlineReturn's password is updated.</returns>
+        public async Task<bool> UpdateOnlineReturnPasswordBL(OnlineReturn updateOnlineReturn)
+        {
+            bool passwordUpdated = false;
+            try
+            {
+                if ((await Validate(updateOnlineReturn)) && (await GetOnlineReturnByOnlineReturnIDBL(updateOnlineReturn.OnlineReturnID)) != null)
+                {
+                    this.onlineReturnDAL.UpdateOnlineReturnPasswordDAL(updateOnlineReturn);
+                    passwordUpdated = true;
+                    Serialize();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return passwordUpdated;
+        }
+
+        /// <summary>
+        /// Disposes DAL object(s).
+        /// </summary>
+        public void Dispose()
+        {
+            ((OnlineReturnDAL)onlineReturnDAL).Dispose();
+        }
+
+        /// <summary>
+        /// Invokes Serialize method of DAL.
+        /// </summary>
+        public static void Serialize()
+        {
+            try
+            {
+                OnlineReturnDAL.Serialize();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        /// <summary>
+        ///Invokes Deserialize method of DAL.
+        /// </summary>
+        public static void Deserialize()
+        {
+            try
+            {
+                OnlineReturnDAL.Deserialize();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+    }
+}
