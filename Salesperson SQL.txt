@@ -1,0 +1,33 @@
+Create DATABASE GreatOutdoor
+Go
+
+USE GreatOutdoor
+Go
+
+CREATE SCHEMA Users
+GO
+CREATE TABLE Users.SalesPersons
+(
+ SalesPersonID varchar Constraint Pk_SalesPerson Primary key,
+ SalesPerson_Name VARCHAR(30) NOT NULL,
+ Email VARCHAR(50) NOT NULL,
+ Password VARCHAR(20) NOT NULL,
+ SalesPerson_Mobile VARCHAR(13) NOT NULL,
+ Creation_DateTime datetime,
+ Last_Modified_DateTime datetime,
+ )
+ Go
+ select*from GreatOutdoor.Users.SalesPersons
+
+ Create procedure UpdateSalesPerson(@salesPersonID varchar(30), @salespersonname varchar(30), @email varchar(50), @password varchar(20), @salespersonmobile varchar(50), @creationdatetime datetime, @lastmodifiedtime datetime)
+ As
+ Begin
+ begin try
+ update SalesPerson set SalesPerson_Name= @salespersonname, Email=@email, Password=@password,SalesPerson_Mobile=@salespersonmobile, Last_Modified_Time =@lastmodifiedtime, Creation_DateTime =@creationdatetime
+ end try
+ begin catch
+ throw 500000, 'SalesPerson Not Found', 1
+ end catch
+ End
+
+
