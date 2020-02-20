@@ -1,0 +1,59 @@
+CREATE TABLE "CarRental"."Customer"
+(
+    "CustomerID" varchar(50) NOT NULL ,
+    "FirstName" character varying(200)  NOT NULL,
+    "LastName" character varying(200)  NOT NULL,
+    "Email" character varying(100) NOT NULL,
+    "MobileNumber" varchar(50) NOT NULL,
+    "Address" character varying(200)  NOT NULL,
+    "Password" character varying(200)  NOT NULL,
+    CONSTRAINT "Customer_pkey" PRIMARY KEY ("CustomerID")
+);
+
+
+CREATE TABLE "CarRental"."Vehicle"
+(
+    "VehicleID" varchar(50) NOT NULL ,
+    "Mileage" bigint NOT NULL,
+    "Location" character varying(200)  NOT NULL,
+    "VehicleSize" character varying(100)  NOT NULL,
+    "Transmission" character varying(100)  NOT NULL,
+    "CustomerID" varchar(50) NOT NULL,
+    CONSTRAINT "Vehicle_pkey" PRIMARY KEY ("VehicleID"),
+    CONSTRAINT "Vehicle_CustomerID_fkey" FOREIGN KEY ("CustomerID")
+        REFERENCES "CarRental"."Customer" ("CustomerID")
+);
+
+
+CREATE TABLE "CarRental"."Reservation"
+(
+    "ReservationID" varchar(50) NOT NULL ,
+    "CustomerID" varchar(50) NOT NULL ,
+    "VehicleID" varchar(50) NOT NULL ,
+    "StartDate" date NOT NULL,
+    "EndDate" date NOT NULL,
+    CONSTRAINT "Reservation_pkey" PRIMARY KEY ("ReservationID"),
+    CONSTRAINT "Reservation_CustomerID_fkey" FOREIGN KEY ("CustomerID")
+        REFERENCES "CarRental"."Customer" ("CustomerID"),
+    CONSTRAINT "Reservation_VehicleID_fkey" FOREIGN KEY ("VehicleID")
+        REFERENCES "CarRental"."Vehicle" ("VehicleID")
+);
+Insert into "CarRental"."Customer" ("CustomerID","FirstName", "LastName","Email","MobileNumber","Address","Password") values ('1','Pulak', 'Sinha','pulak@gmail.com',9048850771,'Thane','Pulak087@')
+
+
+Insert into "CarRental"."Reservation" ("ReservationID","CustomerID", "VehicleID","StartDate","EndDate") values (2,1,1,'25/07/2019','25/09/2020')
+
+
+Insert into "CarRental"."Vehicle" ("VehicleID","Mileage", "Location","VehicleSize","Transmission", "CustomerID") values ('2',25,'Thane','Mid-Size','manual',2)
+
+
+select "VehicleSize" from "CarRental"."Vehicle"
+Insert into "CarRental"."Vehicle" ("VehicleID","Mileage", "Location","VehicleSize","Transmission", "CustomerID") values ('2',25,'Thane','Mid-Size','manual',2)
+
+select* from "CarRental"."Customer"
+
+select * from "CarRental"."Vehicle"
+Insert into "CarRental"."Reservation" ("ReservationID","CustomerID", "VehicleID","StartDate","EndDate") values (2,1,1,'25/07/2019','25/09/2020')
+select * from "CarRental"."Reservation"
+
+Insert into "CarRental"."Customer" ("CustomerID","FirstName", "LastName","Email","MobileNumber","Address","Password") values ('2','Ayush', 'Agrawal','ayush@gmail.com',9048850772,'Thane','Pulak087@')
